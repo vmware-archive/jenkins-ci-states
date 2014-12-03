@@ -1,4 +1,5 @@
 include:
+  - projects.sorbic
   - pkgs.system.pip
 
 install_pylint:

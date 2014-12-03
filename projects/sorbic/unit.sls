@@ -1,4 +1,5 @@
 include:
+  - projects.sorbic
   - pkgs.python.salttesting
 
 install_pylint:
