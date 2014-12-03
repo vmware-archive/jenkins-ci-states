@@ -5,4 +5,3 @@ msgpack-python:
     - extra_index_url: https://pypi.python.org/simple
     - require:
       - pkg: python-pip
-      - virtualenv: {{ salt['config.get']('virtualenv_path') }}
