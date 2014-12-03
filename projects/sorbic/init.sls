@@ -6,4 +6,3 @@ include:
     - system_site_packages: False
     - require:
       - pkg: python-virtualenv
-      - pip: msgpack-python

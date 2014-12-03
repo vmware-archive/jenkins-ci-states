@@ -1,6 +1,5 @@
 include:
   - pkgs.system.pip
-  - projects.sorbic
   - projects.sorbic.common-deps
 
 install_pylint:
@@ -11,4 +10,3 @@ install_pylint:
     - extra_index_url: https://pypi.python.org/simple
     - require:
       - pkg: python-pip
-      - virtualenv: {{ salt['config.get']('virtualenv_path') }}
