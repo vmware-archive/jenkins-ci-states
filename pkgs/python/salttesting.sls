@@ -1,5 +1,5 @@
 include:
-  - pkgs.python.pip
+  - pkgs.system.pip
 
 SaltTesting:
   pip.installed:
@@ -10,5 +10,5 @@ SaltTesting:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - cmd: python-pip
+      - pkg: python-pip
 
