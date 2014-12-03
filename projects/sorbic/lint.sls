@@ -1,7 +1,7 @@
 include:
   - pkgs.system.pip
-  - pkgs.python.msgpack
   - projects.sorbic.virtualenv
+  - pkgs.python.msgpack
 
 install_pylint:
   pip.installed:
