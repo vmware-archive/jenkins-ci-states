@@ -1,6 +1,5 @@
 include:
   - pkgs.system.virtualenv
-  - pkgs.python.msgpack
 
 {{ salt['config.get']('virtualenv_path') }}:
   virtualenv.managed:

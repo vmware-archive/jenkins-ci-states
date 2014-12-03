@@ -1,5 +1,7 @@
 include:
+  - pkgs.system.pip
   - projects.sorbic
+  - projects.sorbic.common-deps
   - pkgs.python.salttesting
 
 install_pylint:

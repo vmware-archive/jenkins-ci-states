@@ -1,0 +1,2 @@
+include:
+  - pkgs.python.msgpack

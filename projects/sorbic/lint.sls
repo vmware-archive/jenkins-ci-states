@@ -1,6 +1,7 @@
 include:
-  - projects.sorbic
   - pkgs.system.pip
+  - projects.sorbic
+  - projects.sorbic.common-deps
 
 install_pylint:
   pip.installed:
