@@ -1,4 +1,4 @@
 include:
-  - pkgs.system.pip
-  - projects.sorbic.common-deps
+  - projects.sorbic.virtualenv
+  - pkgs.python.msgpack
   - pkgs.python.salttesting

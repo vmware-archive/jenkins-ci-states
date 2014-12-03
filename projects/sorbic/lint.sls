@@ -1,6 +1,7 @@
 include:
   - pkgs.system.pip
-  - projects.sorbic.common-deps
+  - pkgs.python.msgpack
+  - projects.sorbic.virtualenv
 
 install_pylint:
   pip.installed:
@@ -10,3 +11,5 @@ install_pylint:
     - extra_index_url: https://pypi.python.org/simple
     - require:
       - pkg: python-pip
+      - virtualenv: {{ salt['config.get']('virtualenv_path') }}
+      - pip: msgpack-python
