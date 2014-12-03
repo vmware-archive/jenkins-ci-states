@@ -1,5 +1,5 @@
 include:
-  - pkgs.python.pip
+  - pkgs.system.pip
 
 unittest-xml-reporting:
   pip.installed:
