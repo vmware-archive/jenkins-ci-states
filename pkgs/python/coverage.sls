@@ -1,3 +1,5 @@
+{% from 'pkgs/system/pip.sls' import pip with context %}
+
 include:
   - pkgs.system.pip
 
@@ -9,4 +11,4 @@ coverage:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: python-pip
+      - pkg: {{ pip }}
