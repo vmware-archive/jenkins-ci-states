@@ -7,6 +7,7 @@ include:
   {%- if salt['config.get']('virtualenv_path', None)  %}
   - projects.sorbic.virtualenv
   {%- endif %}
+  - pkgs.python.salttesting
 
 install_pylint:
   pip.installed:
@@ -22,3 +23,4 @@ install_pylint:
       {%- if salt['config.get']('virtualenv_path', None)  %}
       - virtualenv: {{ salt['config.get']('virtualenv_path') }}
       {%- endif %}
+      - pip: salttesting

@@ -6,6 +6,7 @@ include:
   - projects.sorbic.virtualenv
   {%- endif %}
   - pkgs.python.msgpack
+  - pkgs.python.salttesting
 
 install_pylint:
   pip.installed:
@@ -18,6 +19,7 @@ install_pylint:
     - require:
       - pkg: {{ pip }}
       - pip: msgpack-python
+      - pip: salttesting
       {%- if salt['config.get']('virtualenv_path', None)  %}
       - virtualenv: {{ salt['config.get']('virtualenv_path') }}
       {%- endif %}
