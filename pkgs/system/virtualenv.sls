@@ -1,8 +1,8 @@
 {%- if grains['os'] == 'Arch' %}
-  {% set pkg_name = 'python2-virtualenv' %}
+  {% set virtualenv = 'python2-virtualenv' %}
 {%- else %}
-  {% set pkg_name = 'python-virtualenv' %}
+  {% set virtualenv = 'python-virtualenv' %}
 {%- endif %}
 
-{{ pkg_name }}:
+{{ virtualenv }}:
   pkg.installed

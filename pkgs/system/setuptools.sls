@@ -1,8 +1,8 @@
 {%- if grains['os'] == 'Arch' %}
-  {% set pkg_name = 'python2-setuptools' %}
+  {% set setuptools = 'python2-setuptools' %}
 {%- else %}
-  {% set pkg_name = 'python-setuptools' %}
+  {% set setuptools = 'python-setuptools' %}
 {%- endif %}
 
-{{ pkg_name }}:
+{{ setuptools }}:
   pkg.installed
