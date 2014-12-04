@@ -1,11 +1,12 @@
 {% from 'pkgs/system/pip.sls' import pip with context %}
+{% from 'pkgs/system/libsodium.sls' import libsodium with context %}
 
 include:
   - pkgs.system.pip
+  - pkgs.system.libsodium
   {%- if salt['config.get']('virtualenv_path', None)  %}
   - projects.sorbic.virtualenv
   {%- endif %}
-  - pkgs.python.msgpack
 
 install_pylint:
   pip.installed:
@@ -17,7 +18,7 @@ install_pylint:
     - extra_index_url: https://pypi.python.org/simple
     - require:
       - pkg: {{ pip }}
-      - pip: msgpack-python
+      - pkg: {{ libsodium }}
       {%- if salt['config.get']('virtualenv_path', None)  %}
       - virtualenv: {{ salt['config.get']('virtualenv_path') }}
       {%- endif %}

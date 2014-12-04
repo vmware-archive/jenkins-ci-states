@@ -5,3 +5,7 @@ include:
   - pkgs.python.coverage
   - pkgs.python.salttesting
   - pkgs.python.unittest-xml-reporting
+
+
+noop:
+  test.succeed_without_changes
