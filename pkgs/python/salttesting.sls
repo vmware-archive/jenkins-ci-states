@@ -5,7 +5,7 @@ include:
   - pkgs.python.pep8
   - pkgs.python.modernize
 
-SaltTesting:
+salttesting:
   pip.installed:
     - name: git+https://github.com/saltstack/salt-testing.git@6e0941f0295398d5117b432ed80c86d4c83aa531#egg=SaltTesting
     {%- if salt['config.get']('virtualenv_path', None)  %}
