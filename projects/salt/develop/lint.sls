@@ -4,6 +4,7 @@ include:
   - projects.sorbic.virtualenv
   {%- endif %}
   - pkgs.python.salttesting
+  - pkgs.python.requests
 
 install_pylint:
   pip.installed:
