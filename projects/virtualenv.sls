@@ -1,5 +1,3 @@
-{% from 'pkgs/system/virtualenv.sls' import virtualenv with context %}
-
 include:
   - pkgs.system.virtualenv
 
@@ -7,4 +5,4 @@ include:
   virtualenv.managed:
     - system_site_packages: False
     - require:
-      - pkg: {{ virtualenv }}
+      - pkg: virtualenv

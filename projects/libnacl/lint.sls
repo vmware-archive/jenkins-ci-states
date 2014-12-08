@@ -5,7 +5,7 @@ include:
   - pkgs.system.pip
   - pkgs.system.libsodium
   {%- if salt['config.get']('virtualenv_path', None)  %}
-  - projects.libnacl.virtualenv
+  - projects.virtualenv
   {%- endif %}
   - pkgs.python.salttesting
 

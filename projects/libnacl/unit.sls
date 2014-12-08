@@ -1,5 +1,5 @@
 include:
-  - projects.libnacl.virtualenv
+  - projects.virtualenv
   - pkgs.python.nose
   - pkgs.python.coverage
 

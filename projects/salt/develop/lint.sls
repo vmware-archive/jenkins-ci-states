@@ -1,7 +1,7 @@
 include:
   - pkgs.system.pip
   {%- if salt['config.get']('virtualenv_path', None)  %}
-  - projects.salt.virtualenv
+  - projects.virtualenv
   {%- endif %}
   - pkgs.python.salttesting
   - pkgs.python.requests

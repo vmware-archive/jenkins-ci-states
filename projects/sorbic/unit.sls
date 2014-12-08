@@ -1,5 +1,5 @@
 include:
-  - projects.sorbic.virtualenv
+  - projects.virtualenv
   - pkgs.python.nose
   - pkgs.python.coverage
   - pkgs.python.salttesting
