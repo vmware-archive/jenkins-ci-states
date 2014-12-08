@@ -9,7 +9,7 @@ include:
   {% endif %}
 
 
-unittest2:
+timelib:
   pip.installed:
     {%- if salt['config.get']('virtualenv_path', None)  %}
     - bin_env: {{ salt['config.get']('virtualenv_path') }}
