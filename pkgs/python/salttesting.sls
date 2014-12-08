@@ -1,6 +1,7 @@
 include:
   - pkgs.system.pip
   - pkgs.python.pep8
+  - pkgs.python.mock
   - pkgs.python.coverage
   - pkgs.python.modernize
   - pkgs.python.unittest-xml-reporting
@@ -19,6 +20,7 @@ salttesting:
     - require:
       - pkg: pip
       - pip: pep8
+      - pip: mock
       - pip: coverage
       - pip: modernize
       - pip: unittest-xml-reporting
