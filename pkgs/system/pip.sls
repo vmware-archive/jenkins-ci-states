@@ -4,5 +4,6 @@
   {% set pip = 'python-pip' %}
 {%- endif %}
 
-{{ pip }}:
-  pkg.installed
+pip:
+  pkg.installed:
+    - name: {{ pip }}

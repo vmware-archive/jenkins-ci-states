@@ -1,5 +1,3 @@
-{% from 'pkgs/system/pip.sls' import pip with context %}
-
 include:
   - pkgs.system.pip
 
@@ -12,4 +10,4 @@ unittest-xml-reporting:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: {{ pip }}
+      - pkg: pip
