@@ -2,6 +2,7 @@ include:
   - pkgs.system.gcc
   - pkgs.system.pip
   - pkgs.system.swig
+  - pkgs.system.openssl-dev
 
 m2crypto:
   pip.installed:
@@ -14,3 +15,4 @@ m2crypto:
       - pkg: pip
       - pkg: gcc
       - pkg: swig
+      - pkg: openssl-dev
