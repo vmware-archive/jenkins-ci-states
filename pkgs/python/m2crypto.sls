@@ -6,6 +6,11 @@ include:
 
 m2crypto:
   pip.installed:
+    {%- if grains['os_family'] in ('RedHat', 'Suse') %}
+    - name: git+https://github.com/martinpaljak/M2Crypto.git#egg=M2Crypto
+    {%- else %}
+    - name: M2Crypto
+    {%- endif %}
     {%- if salt['config.get']('virtualenv_path', None)  %}
     - bin_env: {{ salt['config.get']('virtualenv_path') }}
     {%- endif %}
