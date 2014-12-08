@@ -1,7 +1,7 @@
 include:
   - pkgs.system.pip
   {%- if salt['config.get']('virtualenv_path', None)  %}
-  - projects.sorbic.virtualenv
+  - projects.salt.virtualenv
   {%- endif %}
   - pkgs.python.salttesting
   - pkgs.python.requests
