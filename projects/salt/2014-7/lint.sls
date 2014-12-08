@@ -16,7 +16,7 @@ include:
 
 install_pylint:
   pip.installed:
-    - name: 'PyLint==1.3.1'
+    - name: 'PyLint==1.2.1'
     {%- if salt['config.get']('virtualenv_path', None)  %}
     - bin_env: {{ salt['config.get']('virtualenv_path') }}
     {%- endif %}
