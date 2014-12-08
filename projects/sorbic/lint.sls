@@ -1,11 +1,9 @@
-{% from 'pkgs/system/pip.sls' import pip with context %}
-
 include:
   - pkgs.system.pip
   {%- if salt['config.get']('virtualenv_path', None)  %}
   - projects.sorbic.virtualenv
   {%- endif %}
-  - pkgs.python.msgpack
+  - pkgs.python.msgpack-python
   - pkgs.python.salttesting
 
 install_pylint:
@@ -17,7 +15,7 @@ install_pylint:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: {{ pip }}
+      - pkg: pip
       - pip: msgpack-python
       - pip: salttesting
       {%- if salt['config.get']('virtualenv_path', None)  %}
