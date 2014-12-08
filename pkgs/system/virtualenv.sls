@@ -4,5 +4,6 @@
   {% set virtualenv = 'python-virtualenv' %}
 {%- endif %}
 
-{{ virtualenv }}:
-  pkg.installed
+virtualenv:
+  pkg.installed:
+    - name: {{ virtualenv }}
