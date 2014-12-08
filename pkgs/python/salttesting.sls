@@ -1,6 +1,7 @@
 include:
   - pkgs.system.pip
   - pkgs.python.pep8
+  - pkgs.python.coverage
   - pkgs.python.modernize
   - pkgs.python.unittest-xml-reporting
   {%- if grains.get('pythonversion')[:2] < [2, 7] %}
@@ -18,6 +19,7 @@ salttesting:
     - require:
       - pkg: pip
       - pip: pep8
+      - pip: coverage
       - pip: modernize
       - pip: unittest-xml-reporting
       {%- if grains.get('pythonversion')[:2] < [2, 7] %}
