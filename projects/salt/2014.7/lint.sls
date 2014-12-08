@@ -5,6 +5,14 @@ include:
   {%- endif %}
   - pkgs.python.salttesting
   - pkgs.python.requests
+  - pkgs.python.jinja2
+  - pkgs.python.pyyaml
+  - pkgs.python.msgpack-python
+  - pkgs.python.m2crypto
+  - pkgs.python.libnacl
+  - pkgs.python.ioflo
+  - pkgs.python.raet
+  - pkgs.python.apache-libcloud
 
 install_pylint:
   pip.installed:
@@ -19,4 +27,3 @@ install_pylint:
       {%- if salt['config.get']('virtualenv_path', None)  %}
       - virtualenv: {{ salt['config.get']('virtualenv_path') }}
       {%- endif %}
-      - pip: salttesting
