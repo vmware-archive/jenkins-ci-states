@@ -30,7 +30,7 @@ include:
   - pkgs.python.python-gnupg
   - pkgs.python.cherrypy
   - pkgs.python.gitpython
-  - pksgs.python.supervisor
+  - pkgs.python.supervisor
   - pkgs.python.boto
   - pkgs.python.moto
   - pkgs.python.psutil
