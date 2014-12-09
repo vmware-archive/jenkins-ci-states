@@ -1,6 +1,3 @@
-{% from 'pkgs/system/pip.sls' import pip with context %}
-{% from 'pkgs/system/libsodium.sls' import libsodium with context %}
-
 include:
   - pkgs.system.pip
   - pkgs.system.libsodium
@@ -18,9 +15,9 @@ install_pylint:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: {{ pip }}
-      - pkg: {{ libsodium }}
+      - pkg: pip
+      - pkg: libsodium
       {%- if salt['config.get']('virtualenv_path', None)  %}
-      - virtualenv: {{ salt['config.get']('virtualenv_path') }}
+      - virtualenv: create-virtualenv
       {%- endif %}
       - pip: salttesting

@@ -4,4 +4,6 @@ include:
   - pkgs.python.coverage
 
 noop:
-  test.succeed_without_changes
+  test.succeed_without_changes:
+    - require:
+      - virtualenv: create-virtualenv

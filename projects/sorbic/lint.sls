@@ -19,5 +19,5 @@ install_pylint:
       - pip: msgpack-python
       - pip: salttesting
       {%- if salt['config.get']('virtualenv_path', None)  %}
-      - virtualenv: {{ salt['config.get']('virtualenv_path') }}
+      - virtualenv: create-virtualenv
       {%- endif %}
