@@ -25,5 +25,5 @@ install_pylint:
     - require:
       - pkg: pip
       {%- if salt['config.get']('virtualenv_path', None)  %}
-      - virtualenv: {{ salt['config.get']('virtualenv_path') }}
+      - virtualenv: create-virtualenv
       {%- endif %}
