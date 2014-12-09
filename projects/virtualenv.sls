@@ -1,4 +1,4 @@
-{%- set running_as_root = salt['cmd.run']('whoami') == 'root' %}
+{%- set runing_as_root = salt['cmd.run']('whoami') == 'root' %}
 
 {%- if running_as_root %}
 include:
