@@ -7,4 +7,7 @@ include:
   - pkgs.python.requests
 
 noop:
-  test.succeed_without_changes
+  test.succeed_without_changes{%- if salt['config.get']('virtualenv_path', None)  %}:
+    - require:
+      - virtualenv: create-virtualenv
+    {%- endif %}
