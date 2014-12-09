@@ -2,6 +2,8 @@
 {% set test_transport = pillar.get('test_transport', 'zeromq') %}
 
 include:
+  {#- Include the Salt repository clone step ---------------------------------------------------- #}
+  - projects.salt.repo
   {#- Include system packages ------------------------------------------------------------------- #}
   - pkgs.system.git
   - pkgs.system.patch
@@ -41,31 +43,7 @@ include:
   - pkgs.python.raet
   {%- endif %}
 
-/testing:
-  file.directory
-
-clone-salt:
-  git.latest:
-    - name: {{ test_git_url }}
-    - rev: {{ pillar.get('test_git_commit', 'develop') }}
-    - target: /testing
+noop:
+  test.succeed_without_changes:
     - require:
-      - file: /testing
-
-{% if test_git_url != "https://github.com/saltstack/salt.git" %}
-{#- Add Salt Upstream Git Repo #}
-add-upstream-repo:
-  cmd.run:
-    - name: git remote add upstream https://github.com/saltstack/salt.git
-    - cwd: /testing
-    - require:
-      - git: clone-salt
-
-{# Fetch Upstream Tags -#}
-fetch-upstream-tags:
-  cmd.run:
-    - name: git fetch upstream --tags
-    - cwd: /testing
-    - require:
-      - cmd: add-upstream-repo
-{% endif %}
+      - git: clone
