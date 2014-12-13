@@ -2,6 +2,7 @@ include:
   - pkgs.system.pip
   - pkgs.python.pep8
   - pkgs.python.mock
+  - pkgs.python.requests
   - pkgs.python.coverage
   - pkgs.python.modernize
   - pkgs.python.unittest-xml-reporting
@@ -24,6 +25,7 @@ salttesting:
       - pip: mock
       - pip: coverage
       - pip: modernize
+      - pip: requests
       - pip: unittest-xml-reporting
       {%- if grains.get('pythonversion')[:2] < [2, 7] %}
       - pip: unittest2
