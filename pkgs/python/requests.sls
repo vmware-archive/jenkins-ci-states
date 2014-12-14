@@ -3,6 +3,8 @@ include:
 
 requests:
   pip.installed:
+    - name: requests >= 2.4.2
+    - upgrade: True
     {%- if salt['config.get']('virtualenv_name', None)  %}
     - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
