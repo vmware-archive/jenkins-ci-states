@@ -5,7 +5,7 @@ include:
 gitpythton:
   pip.installed:
     - name: 'GitPython>=0.3.2rc1'
-    {%- if salt['config.get']('virtualenv_path', None)  %}
+    {%- if salt['config.get']('virtualenv_name', None)  %}
     - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
     - upgrade: True

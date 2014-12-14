@@ -1,6 +1,6 @@
 include:
   - pkgs.system.pip
-  {%- if salt['config.get']('virtualenv_path', None)  %}
+  {%- if salt['config.get']('virtualenv_name', None)  %}
   - projects.virtualenv
   {%- endif %}
   - pkgs.python.msgpack-python
@@ -9,7 +9,7 @@ include:
 install_pylint:
   pip.installed:
     - name: 'PyLint==1.4.0'
-    {%- if salt['config.get']('virtualenv_path', None)  %}
+    {%- if salt['config.get']('virtualenv_name', None)  %}
     - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
@@ -18,6 +18,6 @@ install_pylint:
       - pkg: pip
       - pip: msgpack-python
       - pip: salttesting
-      {%- if salt['config.get']('virtualenv_path', None)  %}
+      {%- if salt['config.get']('virtualenv_name', None)  %}
       - virtualenv: create-virtualenv
       {%- endif %}

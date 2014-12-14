@@ -4,7 +4,7 @@ include:
 
 libnacl:
   pip.installed:
-    {%- if salt['config.get']('virtualenv_path', None)  %}
+    {%- if salt['config.get']('virtualenv_name', None)  %}
     - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop

@@ -13,7 +13,7 @@ include:
 salttesting:
   pip.installed:
     - name: git+https://github.com/saltstack/salt-testing.git#egg=SaltTesting
-    {%- if salt['config.get']('virtualenv_path', None)  %}
+    {%- if salt['config.get']('virtualenv_name', None)  %}
     - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
     - upgrade: True
