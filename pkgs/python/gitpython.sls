@@ -6,7 +6,7 @@ gitpythton:
   pip.installed:
     - name: 'GitPython>=0.3.2rc1'
     {%- if salt['config.get']('virtualenv_path', None)  %}
-    - bin_env: {{ salt['config.get']('virtualenv_path') }}
+    - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
     - upgrade: True
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop

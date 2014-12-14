@@ -14,7 +14,7 @@ salttesting:
   pip.installed:
     - name: git+https://github.com/saltstack/salt-testing.git#egg=SaltTesting
     {%- if salt['config.get']('virtualenv_path', None)  %}
-    - bin_env: {{ salt['config.get']('virtualenv_path') }}
+    - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
     - upgrade: True
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
