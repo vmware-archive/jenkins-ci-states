@@ -4,6 +4,7 @@ include:
   - pkgs.python.nose
   - pkgs.python.ioflo
   - pkgs.python.libnacl
+  - pkgs.python.msgpack
   - pkgs.python.coverage
   - pkgs.python.salttesting
 
