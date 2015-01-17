@@ -1,4 +1,4 @@
-{% set shell_check_version = '0.3.5' %}
+{%- from "pkgs/source/shellcheck.sls" import shell_check_version with context %}
 
 cabal-install:
   pkg.installed:
