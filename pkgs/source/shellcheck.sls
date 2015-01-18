@@ -7,7 +7,6 @@ include:
 create-repo-clone-dir:
   file.directory:
     - name: {{ repo_clone_dir }}
-    - onlyif: '[ "$( shellcheck -V 2> /dev/null | grep "version:" | awk "{ print $2 }" 2> /dev/null )" != "{{ shell_check_version }}" ]'
 
 clone:
   git.latest:
@@ -17,7 +16,6 @@ clone:
     - require:
       - file: create-repo-clone-dir
       - pkg: cabal-install
-    - onlyif: '[ "$( shellcheck -V 2> /dev/null | grep "version:" | awk "{ print $2 }" 2> /dev/null )" != "{{ shell_check_version }}" ]'
 
 
 install-shellcheck:
@@ -26,4 +24,3 @@ install-shellcheck:
     - cwd: {{ repo_clone_dir }}
     - require:
       - cmd: updated-cabal-install
-    - onlyif: '[ "$( shellcheck -V 2> /dev/null | grep "version:" | awk "{ print $2 }" 2> /dev/null )" != "{{ shell_check_version }}" ]'
