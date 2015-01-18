@@ -20,7 +20,7 @@ clone:
 
 install-shellcheck:
   cmd.run:
-    - name: cabal install
+    - name: cabal install --prefix=/usr
     - cwd: {{ repo_clone_dir }}
     - require:
       - cmd: updated-cabal-install
