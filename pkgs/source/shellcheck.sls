@@ -1,4 +1,4 @@
-{%- set repo_clone_dir = pillar.get('shellcheck_clone_dir', '${HOME}/src/shellcheck-checkout') %}
+{%- set repo_clone_dir = pillar.get('shellcheck_clone_dir', '~/src-builds/shellcheck-checkout') %}
 {%- set shell_check_version = '0.3.5' %}
 
 include:
