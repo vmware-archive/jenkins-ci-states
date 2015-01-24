@@ -4,6 +4,7 @@
 include:
   {#- Include system packages ------------------------------------------------------------------- #}
   - pkgs.system.git
+  - pkgs.system.sed
   - pkgs.system.patch
   {%- if grains['os'] == 'openSUSE' %}
   {#- Yes! openSuse ships xml as separate package #}
