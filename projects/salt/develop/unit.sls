@@ -38,6 +38,7 @@ include:
   - pkgs.python.moto
   - pkgs.python.psutil
   - pkgs.python.tornado
+  - pkgs.python.dnspython
   {%- if test_transport == 'raet' %}
   - pkgs.python.libnacl
   - pkgs.python.ioflo
