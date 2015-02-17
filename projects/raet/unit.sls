@@ -1,9 +1,9 @@
 include:
   - projects.virtualenv
   - pkgs.python.six
-  - pkgs.python.enum
   - pkgs.python.nose
   - pkgs.python.ioflo
+  - pkgs.python.enum34
   - pkgs.python.libnacl
   - pkgs.python.coverage
   - pkgs.python.salttesting

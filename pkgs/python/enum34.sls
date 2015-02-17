@@ -1,9 +1,9 @@
 include:
   - pkgs.system.pip
 
-enum:
+enum34:
   pip.installed:
-    - name: enum
+    - name: enum34 >= 1.0.4
     {%- if salt['config.get']('virtualenv_name', None)  %}
     - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
