@@ -4,6 +4,7 @@ include:
   - projects.virtualenv
   {%- endif %}
   - pkgs.python.six
+  - pkgs.python.enum
   - pkgs.python.ioflo
   - pkgs.python.libnacl
   - pkgs.python.salttesting
@@ -23,6 +24,7 @@ install_pylint:
       - virtualenv: create-virtualenv
       {%- endif %}
       - pip: six
+      - pip: enum
       - pip: ioflo
       - pip: libnacl
       - pip: salttesting
