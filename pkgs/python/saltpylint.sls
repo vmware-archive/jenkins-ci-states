@@ -2,7 +2,6 @@ include:
   - pkgs.system.pip
   - pkgs.python.pep8
   - pkgs.python.modernize
-  {%- endif %}
 
 salttesting:
   pip.installed:
@@ -17,4 +16,3 @@ salttesting:
       - pkg: pip
       - pip: pep8
       - pip: modernize
-      {%- endif %}
