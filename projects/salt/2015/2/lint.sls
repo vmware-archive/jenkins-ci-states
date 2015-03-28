@@ -14,6 +14,7 @@ include:
   - pkgs.python.ioflo
   - pkgs.python.raet
   - pkgs.python.apache-libcloud
+  - pkgs.python.pyzmq
 
 install_pylint:
   pip.installed:
