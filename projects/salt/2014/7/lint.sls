@@ -3,6 +3,7 @@ include:
   {%- if salt['config.get']('virtualenv_name', None)  %}
   - projects.virtualenv
   {%- endif %}
+  - pkgs.python.saltpylint
   - pkgs.python.salttesting
   - pkgs.python.requests
   - pkgs.python.jinja2
@@ -16,7 +17,7 @@ include:
 
 install_pylint:
   pip.installed:
-    - name: 'PyLint==1.2.1'
+    - name: 'PyLint==1.3.1'
     {%- if salt['config.get']('virtualenv_name', None)  %}
     - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
