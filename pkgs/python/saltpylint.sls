@@ -3,7 +3,7 @@ include:
   - pkgs.python.pep8
   - pkgs.python.modernize
 
-salttesting:
+saltpylint:
   pip.installed:
     - name: git+https://github.com/saltstack/salt-pylint.git#egg=SaltPyLint
     {%- if salt['config.get']('virtualenv_name', None)  %}
