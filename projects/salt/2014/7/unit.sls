@@ -3,6 +3,7 @@
 
 include:
   {#- Include system packages ------------------------------------------------------------------- #}
+  - pkgs.system.pip
   - pkgs.system.git
   - pkgs.system.sed
   - pkgs.system.patch

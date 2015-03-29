@@ -5,6 +5,7 @@ include:
   {#- Include the Salt repository clone step ---------------------------------------------------- #}
   - projects.salt.repo
   {#- Include system packages ------------------------------------------------------------------- #}
+  - pkgs.system.pip
   - pkgs.system.git
   - pkgs.system.sed
   - pkgs.system.patch
