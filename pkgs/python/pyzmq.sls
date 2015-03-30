@@ -10,6 +10,10 @@ pyzmq:
     {%- endif %}
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
+    - global-options:
+      - fetch_libzmq
+    - install-options:
+      - --zmq=bundled
     - require:
       - pip: pip
       - pkg: gcc
