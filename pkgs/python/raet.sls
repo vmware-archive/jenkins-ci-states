@@ -1,5 +1,5 @@
 include:
-  - pkgs.system.pip
+  - pkgs.python.pip
   - pkgs.python.six
 
 raet:
@@ -11,5 +11,5 @@ raet:
     - extra_index_url: https://pypi.python.org/simple
     - upgrade: true
     - require:
-      - pkg: pip
+      - pip: pip
       - pip: six

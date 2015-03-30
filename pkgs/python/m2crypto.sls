@@ -1,6 +1,6 @@
 include:
   - pkgs.system.gcc
-  - pkgs.system.pip
+  - pkgs.python.pip
   - pkgs.system.swig
   - pkgs.system.openssl-dev
 
@@ -17,7 +17,7 @@ m2crypto:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: pip
+      - pip: pip
       - pkg: gcc
       - pkg: swig
       - pkg: openssl-dev

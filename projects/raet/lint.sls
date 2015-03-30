@@ -1,5 +1,5 @@
 include:
-  - pkgs.system.pip
+  - pkgs.python.pip
   {%- if salt['config.get']('virtualenv_name', None)  %}
   - projects.virtualenv
   {%- endif %}
@@ -19,7 +19,7 @@ install_pylint:
     - extra_index_url: https://pypi.python.org/simple
     - upgrade: true
     - require:
-      - pkg: pip
+      - pip: pip
       {%- if salt['config.get']('virtualenv_name', None)  %}
       - virtualenv: create-virtualenv
       {%- endif %}

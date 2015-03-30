@@ -1,5 +1,5 @@
 include:
-  - pkgs.system.pip
+  - pkgs.python.pip
 
 {%- if grains['os'] == 'Fedora' %}
 uninstall-python-gnupg:
@@ -15,7 +15,7 @@ python-gnupg:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: pip
+      - pip: pip
       {%- if grains['os'] == 'Fedora' %}
       - pkg: uninstall-python-gnupg
       {%- endif %}

@@ -1,5 +1,5 @@
 include:
-  - pkgs.system.pip
+  - pkgs.python.pip
   {%- if salt['config.get']('virtualenv_name', None)  %}
   - projects.virtualenv
   {%- endif %}
@@ -16,7 +16,7 @@ install_pylint:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: pip
+      - pip: pip
       - pip: msgpack-python
       - pip: salttesting
       {%- if salt['config.get']('virtualenv_name', None)  %}

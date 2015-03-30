@@ -1,5 +1,5 @@
 include:
-  - pkgs.system.pip
+  - pkgs.python.pip
   - pkgs.python.pep8
   - pkgs.python.modernize
 
@@ -13,6 +13,6 @@ saltpylint:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: pip
+      - pip: pip
       - pip: pep8
       - pip: modernize

@@ -1,6 +1,6 @@
 include:
   - pkgs.system.gcc
-  - pkgs.system.pip
+  - pkgs.python.pip
   - pkgs.system.swig
 
 pyzmq:
@@ -11,6 +11,6 @@ pyzmq:
     - index_url: https://pypi-jenkins.saltstack.com/jenkins/develop
     - extra_index_url: https://pypi.python.org/simple
     - require:
-      - pkg: pip
+      - pip: pip
       - pkg: gcc
       - pkg: swig
