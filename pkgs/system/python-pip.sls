@@ -6,7 +6,7 @@
   {% set pip = 'python-pip' %}
 {%- endif %}
 
-pip:
+python-pip:
   pkg.installed:
     - name: {{ pip }}
     - upgrade: true

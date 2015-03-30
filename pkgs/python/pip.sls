@@ -1,5 +1,5 @@
 include:
-  - pkgs.system.pip
+  - pkgs.system.python-pip
 
 pip:
   pip.installed:
@@ -11,4 +11,4 @@ pip:
     - upgrade: true
     - reload_modules: true
     - require:
-      - pkg: pip
+      - pkg: python-pip
