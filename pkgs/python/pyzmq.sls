@@ -1,5 +1,6 @@
 include:
   - pkgs.system.gcc
+  - pkgs.system.c++
   - pkgs.python.pip
   - pkgs.system.swig
 
@@ -17,4 +18,5 @@ pyzmq:
     - require:
       - pip: pip
       - pkg: gcc
+      - pkg: c++
       - pkg: swig
