@@ -9,3 +9,5 @@
 pip:
   pkg.installed:
     - name: {{ pip }}
+    - upgrade: true
+    - reload_modules: true
