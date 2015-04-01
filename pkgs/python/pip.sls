@@ -10,8 +10,12 @@ pip-cmd:
     - reload_modules: true
     - require:
       - pkg: python-pip
-  pkg.removed:
-    - name: python-pip
+
+uninstall-system-python-pip:
+  cmd.run:
+    - name: apt-get -q -y remove python-pip
+    - require:
+      - cmd: pip-cmd
 {% endif %}
 
 pip:
@@ -23,4 +27,9 @@ pip:
     - extra_index_url: https://pypi.python.org/simple
     - upgrade: true
     - reload_modules: true
-    - order: last
+    - require:
+      {%- if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
+      - cmd: uninstall-system-python-pip
+      {%- else %}
+      - pkg: python-pip
+      {%- endif %}
