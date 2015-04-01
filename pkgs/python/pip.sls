@@ -27,10 +27,10 @@ pip:
     - extra_index_url: https://pypi.python.org/simple
     - upgrade: true
     - reload_modules: true
+    - order: last
     - require:
       {%- if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
-      - cmd: pip-cmd
-      - pkg: uninstall-system-python-pip
+      - pkg: pip-cmd
       {%- else %}
       - pkg: python-pip
       {%- endif %}
