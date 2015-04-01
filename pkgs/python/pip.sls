@@ -22,8 +22,10 @@ uninstall-system-python-pip:
 {#- Symlink the pip binary because /usr/bin/pip will be removed when uninstalling python-pip #}
 symlink-python-pip:
   file.symlink:
-    - name: /usr/bin/pip2
-    - target: /usr/bin/pip
+    - name: /usr/bin/pip
+    - target: /usr/bin/pip2
+    - require:
+      - cmd: uninstall-system-python-pip
 
 {% endif %}
 
@@ -38,7 +40,7 @@ pip:
     - reload_modules: true
     - require:
       {%- if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
-      - cmd: uninstall-system-python-pip
+      - cmd: symlink-python-pip
       {%- else %}
       - pkg: python-pip
       {%- endif %}
