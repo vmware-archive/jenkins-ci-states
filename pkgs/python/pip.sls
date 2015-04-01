@@ -8,16 +8,11 @@ pip-cmd:
   cmd.run:
     - name: pip install --upgrade pip --install-option="--prefix=/usr"
     - reload_modules: true
-    - order: 1
     - require:
       - pkg: python-pip
-
-uninstall-system-python-pip:
   pkg.removed:
     - name: python-pip
-    - order: 2
-    - require:
-      - pkg: python-pip
+    - order: last
 {% endif %}
 
 pip:
