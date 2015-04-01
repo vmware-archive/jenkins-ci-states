@@ -9,6 +9,7 @@ pip-cmd:
     - name: pip install --upgrade pip --install-option="--prefix=/usr"
     - require:
       - pkg: python-pip
+    - reload_modules: true
 
 uninstall-system-python-pip:
   cmd.run:
