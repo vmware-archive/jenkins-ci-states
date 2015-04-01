@@ -10,12 +10,12 @@ pip-cmd:
     - reload_modules: true
     - require:
       - pkg: python-pip
-      - order: 1
+      - order: '1'
 
 uninstall-system-python-pip:
   pkg.removed:
     - name: python-pip
-    - order: 2
+    - order: '2'
 {% endif %}
 
 pip:
