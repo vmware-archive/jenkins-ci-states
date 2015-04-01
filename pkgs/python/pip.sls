@@ -12,7 +12,6 @@ pip-cmd:
       - pkg: python-pip
   pkg.removed:
     - name: python-pip
-    - order: last
 {% endif %}
 
 pip:
