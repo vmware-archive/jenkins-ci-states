@@ -16,6 +16,8 @@ uninstall-system-python-pip:
   pkg.removed:
     - name: python-pip
     - order: 2
+    - require:
+      - pkg: python-pip
 {% endif %}
 
 pip:
