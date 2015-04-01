@@ -7,7 +7,6 @@ include:
 pip-cmd:
   cmd.run:
     - name: pip install --upgrade pip --install-option="--prefix=/usr"
-    - reload_modules: true
     - require:
       - pkg: python-pip
 
@@ -16,6 +15,7 @@ uninstall-system-python-pip:
     - name: apt-get -q -y remove python-pip
     - require:
       - cmd: pip-cmd
+    - reload_modules: true
 {% endif %}
 
 pip:
