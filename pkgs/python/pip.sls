@@ -14,8 +14,6 @@ pip-cmd:
 uninstall-system-python-pip:
   pkg.removed:
     - name: python-pip
-    - require:
-      - cmd: pip-cmd
 {% endif %}
 
 pip:
@@ -29,6 +27,7 @@ pip:
     - reload_modules: true
     - require:
       {%- if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
+      - cmd: pip-cmd
       - pkg: uninstall-system-python-pip
       {%- else %}
       - pkg: python-pip
