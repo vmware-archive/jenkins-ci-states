@@ -11,12 +11,20 @@ pip-cmd:
       - pkg: python-pip
     - reload_modules: true
 
+{#- Uninstall the system package because it will be imported by salt, not the newer version #}
 uninstall-system-python-pip:
   cmd.run:
     - name: apt-get -q -y remove python-pip
     - require:
       - cmd: pip-cmd
     - reload_modules: true
+
+{#- Symlink the pip binary because /usr/bin/pip will be removed when uninstalling python-pip #}
+symlink-python-pip:
+  file.symlink:
+    - name: /usr/bin/pip2
+    - target: /usr/bin/pip
+
 {% endif %}
 
 pip:
