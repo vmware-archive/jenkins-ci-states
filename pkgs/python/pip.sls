@@ -40,7 +40,7 @@ pip:
     - reload_modules: true
     - require:
       {%- if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
-      - cmd: symlink-python-pip
+      - file: symlink-python-pip
       {%- else %}
       - pkg: python-pip
       {%- endif %}
