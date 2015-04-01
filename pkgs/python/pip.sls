@@ -28,5 +28,3 @@ pip:
     - upgrade: true
     - reload_modules: true
     - order: last
-    - require:
-      - pkg: python-pip
