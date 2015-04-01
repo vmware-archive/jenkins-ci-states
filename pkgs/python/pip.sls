@@ -6,7 +6,7 @@ include:
 {% if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
 pip-cmd:
   cmd.run:
-    - name: pip install --upgrade pip
+    - name: pip install --upgrade pip --install-option="--prefix=/usr"
     - reload_modules: true
     - require:
       - pkg: python-pip
