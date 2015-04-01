@@ -30,7 +30,7 @@ pip:
     - order: last
     - require:
       {%- if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
-      - pkg: pip-cmd
+      - cmd: pip-cmd
       {%- else %}
       - pkg: python-pip
       {%- endif %}
