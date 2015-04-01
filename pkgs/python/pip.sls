@@ -29,8 +29,4 @@ pip:
     - reload_modules: true
     - order: last
     - require:
-      {%- if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
-      - cmd: pip-cmd
-      {%- else %}
       - pkg: python-pip
-      {%- endif %}
