@@ -19,3 +19,4 @@ python-pip:
     {%- if grains['os'] == 'openSUSE' %}
     - require:
       - pkg: ca-certificates-mozilla
+    {%- endif %}
