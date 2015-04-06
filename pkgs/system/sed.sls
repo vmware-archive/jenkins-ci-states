@@ -5,5 +5,5 @@
 {%- endif %}
 
 sed:
-  pkg.installed:
+  pkg.latest:
     - name: {{ sed }}

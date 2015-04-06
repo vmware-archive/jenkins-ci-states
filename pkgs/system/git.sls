@@ -7,6 +7,6 @@
 {% endif %}
 
 git:
-  pkg.installed:
+  pkg.latest:
     - name: {{ git }}
     - refresh: True  # Ensure that pacman runs the first time with -Syu

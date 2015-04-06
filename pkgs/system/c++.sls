@@ -1,5 +1,5 @@
 {% set cpp = 'gcc-c++' %}
 
 c++:
-  pkg.installed:
+  pkg.latest:
     - name: {{ cpp }}
