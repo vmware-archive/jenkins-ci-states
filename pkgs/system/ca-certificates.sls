@@ -4,19 +4,24 @@
   {%- set ca_certificates = 'ca-certificates' %}
 {%- endif %}
 
-{%- if grains['os_family'] == 'RedHat' and grains['osmajorrelease'][0] == '5' %}
 include:
+  - pkgs.system.openssl
+  {%- if grains['os_family'] == 'RedHat' and grains['osmajorrelease'][0] == '5' %}
   - pkgs.system.wget
+  {%- endif %}
 
 download-ca-certificates:
   cmd.run:
     - name: wget -O /etc/pki/tls/certs/ca-bundle.crt http://curl.haxx.se/ca/cacert.pem
     - require:
       - pkg: wget
+      - pkg: openssl
 {%- else %}
 install-ca-certificates:
   pkg.latest:
     - name: {{ ca_certificates }}
+    - require:
+      - pkg: openssl
 {%- endif %}
 
 ca-certificates:
