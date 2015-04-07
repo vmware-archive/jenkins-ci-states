@@ -5,10 +5,14 @@
 {%- endif %}
 
 {%- if grains['os_family'] == 'RedHat' and grains['osmajorrelease'][0] == '5' %}
+include:
+  - pkgs.system.wget
+
 download-ca-certificates:
-  file.managed:
-    - name: /etc/pki/tls/certs/ca-bundle.crt
-    - source: http://curl.haxx.se/ca/cacert.pem
+  cmd.run:
+    - name: wget -O /etc/pki/tls/certs/ca-bundle.crt http://curl.haxx.se/ca/cacert.pem
+    - require:
+      - pkg: wget
 {%- else %}
 install-ca-certificates:
   pkg.latest:
@@ -19,7 +23,7 @@ ca-certificates:
   test.succeed_with_changes:
     - watch:
       {%- if grains['os_family'] == 'RedHat' and grains['osmajorrelease'][0] == '5' %}
-      - file: download-ca-certificates
+      - cmd: download-ca-certificates
       {%- else %}
       - pkg: install-ca-certificates
       {%- endif %}
