@@ -10,6 +10,7 @@ include:
   - pkgs.system.wget
   {%- endif %}
 
+{% if grains['os_family'] == 'RedHat' and grains['osmajorrelease'][0] == '5' %}
 download-ca-certificates:
   cmd.run:
     - name: wget -O /etc/pki/tls/certs/ca-bundle.crt http://curl.haxx.se/ca/cacert.pem
