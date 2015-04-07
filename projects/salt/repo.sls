@@ -1,6 +1,9 @@
-{% set repo_clone_dir = pillar.get('repo_clone_dir', '/testing') %}
-{% set repo_clone_rev =  pillar.get('repo_clone_rev', 'develop') %}
-{% set repo_clone_url =  pillar.get('repo_clone_url', 'https://github.com/saltstack/salt.git') %}
+{%- set repo_clone_dir = pillar.get('repo_clone_dir', '/testing') %}
+{%- set repo_clone_rev =  pillar.get('repo_clone_rev', 'develop') %}
+{%- set repo_clone_url =  pillar.get('repo_clone_url', 'https://github.com/saltstack/salt.git') %}
+
+include:
+  - pkgs.system.ca-certificates
 
 create-repo-clone-dir:
   file.directory:
@@ -12,6 +15,7 @@ clone:
     - rev: {{ repo_clone_rev }}
     - target: {{ repo_clone_dir }}
     - require:
+      - test: ca-certificates
       - file: create-repo-clone-dir
 
 {% if repo_clone_url != "https://github.com/saltstack/salt.git" %}

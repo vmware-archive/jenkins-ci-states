@@ -15,4 +15,4 @@ python-pip:
     - upgrade: true
     - reload_modules: true
     - require:
-      - pkg: ca-certificates
+      - test: ca-certificates
