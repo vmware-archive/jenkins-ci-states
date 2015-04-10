@@ -15,6 +15,7 @@ include:
   - pkgs.python.raet
   - pkgs.python.apache-libcloud
   - pkgs.python.pyzmq
+  - pkgs.python.backports.lzma
 
 install_pylint:
   pip.installed:
