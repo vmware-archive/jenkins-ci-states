@@ -1,0 +1,57 @@
+@import url("original.css");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body, p, table, tr, td, strong, h1, h2, h3, h4, h5, h6, blockquote, li {
+  font-family: 'Open Sans Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+
+#top-panel, #header {
+  height: 48px;
+  background-color: #F7F9F8;
+  background-repeat: no-repeat;
+  background-image: url('../img/saltstack_logo.png');
+}
+
+#top-panel, #login-field SPAN, #login-field A, #header .login, #header .login a, #header .login a:visited {
+  color: #333;
+}
+
+#top-panel img:first-child, img#jenkins-head-icon, img#jenkins-name-icon {
+  background-image: none;
+  display: none;
+}
+
+#top-panel table:first-child, #header {
+  height: 48px;
+  border-bottom: 1px solid #BBB;
+}
+
+#search-box {
+  margin-top: 2px;
+}
+
+body>table:last-child {
+  background-color: #F7F9F8;
+}
+
+#footer {
+  font-family: 'Open Sans Extrabold';
+}
+#footer-container {
+  display: none;
+}
+
+#main-table > tbody > tr >  td:first-child, #side-panel {
+  background-image: url(../img/saltstack-logo-color.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+
+a.task-link {
+  text-decoration: none;
+}
+
+#tasks {
+  font-size: small;
+}
