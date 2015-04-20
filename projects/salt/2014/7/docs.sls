@@ -1,5 +1,6 @@
 include:
   - latex
+  - latex.xetex
   - pkgs.python.pip
   {%- if salt['config.get']('virtualenv_name', None)  %}
   - projects.virtualenv
