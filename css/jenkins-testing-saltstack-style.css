@@ -1,5 +1,14 @@
 @import url("jenkins-saltstack-style.css");
 
-.top-sticker-inner {
-    background-color: #E7FED9;
+#page-head {
+  background-image: url("../img/old-hazard-stripes.jpg")
+  background-repeat: repeat-x;
+}
+
+#top-panel, #header {
+  background-color: rgba(247, 249, 248, 0.64);
+}
+
+#breadcrumbBar, #footer-container, .top-sticker-inner {
+  background-color: rgba(246, 250, 242, 0.65);
 }
