@@ -25,6 +25,7 @@ include:
   {%- if grains.get('pythonversion')[:2] < [2, 7] %}
   - pkgs.python.argparse
   {%- endif %}
+  - pkgs.python.setuptools
   - pkgs.python.virtualenv
   - pkgs.python.salttesting
   - pkgs.python.timelib
