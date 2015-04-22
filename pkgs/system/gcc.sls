@@ -10,7 +10,7 @@ gcc-multilib:
 {%- endif %}
 
 gcc:
-  pkg.installed:
+  pkg.latest:
     - name: {{ gcc }}
     {%- if grains['os'] == 'Arch' %}
     - require:

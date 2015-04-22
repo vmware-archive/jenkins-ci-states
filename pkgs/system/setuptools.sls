@@ -5,4 +5,4 @@
 {%- endif %}
 
 {{ setuptools }}:
-  pkg.installed
+  pkg.latest

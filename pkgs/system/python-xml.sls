@@ -1,2 +1,2 @@
 python-xml:
-  pkg.installed
+  pkg.latest

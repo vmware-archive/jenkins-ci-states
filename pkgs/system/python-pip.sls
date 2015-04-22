@@ -10,7 +10,7 @@ include:
 {%- endif %}
 
 python-pip:
-  pkg.installed:
+  pkg.latest:
     - name: {{ pip }}
     - upgrade: true
     - reload_modules: true

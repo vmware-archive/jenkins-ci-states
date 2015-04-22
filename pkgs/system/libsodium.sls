@@ -7,5 +7,5 @@
 {%- endif %}
 
 libsodium:
-  pkg.installed:
+  pkg.latest:
     - name: {{ libsodium }}

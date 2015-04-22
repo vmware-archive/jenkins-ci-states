@@ -1,5 +1,5 @@
 {% set xz = 'xz' %}
 
 xz:
-  pkg.installed:
+  pkg.latest:
     - name: {{ xz }}
