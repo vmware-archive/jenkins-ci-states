@@ -5,5 +5,5 @@
 {%- endif %}
 
 virtualenv:
-  pkg.latest:
+  pkg.installed:
     - name: {{ virtualenv }}

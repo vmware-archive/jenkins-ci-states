@@ -1,5 +1,5 @@
 {% set cpio = 'cpio' %}
 
 cpio:
-  pkg.latest:
+  pkg.installed:
     - name: {{ cpio }}

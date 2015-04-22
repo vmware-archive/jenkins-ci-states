@@ -17,5 +17,5 @@
 {% endif %}
 
 python-dev:
-  pkg.latest:
+  pkg.installed:
     - name: {{ python_dev }}

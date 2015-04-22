@@ -5,5 +5,5 @@
 {%- endif %}
 
 openssl-dev:
-  pkg.latest:
+  pkg.installed:
     - name: {{ openssl_dev }}

@@ -10,5 +10,5 @@
 {% endif %}
 
 dnsutils:
-  pkg.latest:
+  pkg.installed:
     - name: {{ dnsutils }}

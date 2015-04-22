@@ -4,7 +4,7 @@ include:
   - pkgs.system.zlib-dev
 
 cabal-install:
-  pkg.latest
+  pkg.installed
 
 update-cabal:
   cmd.run:

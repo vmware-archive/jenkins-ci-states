@@ -5,5 +5,5 @@
 {% endif %}
 
 zlib-dev:
-  pkg.latest:
+  pkg.installed:
     - name: {{ zlib_dev }}

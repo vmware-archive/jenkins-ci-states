@@ -11,5 +11,5 @@
 {% endif %}
 
 mysqldb:
-  pkg.latest:
+  pkg.installed:
     - name: {{ mysqldb }}

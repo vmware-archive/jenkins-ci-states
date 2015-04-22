@@ -1,2 +1,2 @@
 swig:
-  pkg.latest
+  pkg.installed

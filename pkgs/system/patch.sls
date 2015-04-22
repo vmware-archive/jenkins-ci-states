@@ -5,5 +5,5 @@
 {%- endif %}
 
 patch:
-  pkg.latest:
+  pkg.installed:
     - name: {{ patch }}
