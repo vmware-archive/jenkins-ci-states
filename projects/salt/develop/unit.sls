@@ -40,6 +40,9 @@ include:
   - pkgs.python.moto
   - pkgs.python.psutil
   - pkgs.python.tornado
+  {%- if grains.get('pythonversion')[:2] < [3, 2] %}
+  - pkgs.python.futures
+  {%- endif %}
   - pkgs.python.dnspython
   {%- if test_transport == 'raet' %}
   - pkgs.python.libnacl
