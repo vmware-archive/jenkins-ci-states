@@ -16,6 +16,7 @@ include:
   - pkgs.python.apache-libcloud
   - pkgs.python.pyzmq
   - pkgs.python.backports.lzma
+  - pkgs.python.tornado
 
 install_pylint:
   pip.installed:
