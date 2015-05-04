@@ -1,3 +1,5 @@
+{%- from "pkgs/system/python-pip.sls" import pip with context -%}
+
 include:
   - pkgs.system.python-pip
 
@@ -6,7 +8,7 @@ include:
 {% if (grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.')) or (grains['os'] == 'CentOS' and grains['osrelease'].startswith('5.')) %}
 uninstall-python-pip:
   pkg.purged:
-    - name: python
+    - name: {{ pip }}
 
 pip-cmd:
   cmd.run:
