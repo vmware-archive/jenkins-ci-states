@@ -1,3 +1,4 @@
+{%- from "_python_binary_name.sls" import python with context -%}
 {%- from "pkgs/system/python-pip.sls" import pip with context -%}
 
 include:
@@ -12,7 +13,7 @@ uninstall-python-pip:
 
 pip-cmd:
   cmd.run:
-    - name: wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py -O - | python
+    - name: wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py -O - | {{ python }}
     - require:
       - pkg: uninstall-python-pip
     - reload_modules: true
