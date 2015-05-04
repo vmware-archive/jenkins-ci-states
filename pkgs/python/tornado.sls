@@ -5,7 +5,7 @@ include:
 
 tornado:
   pip.installed:
-    - name: 'tornado >= {{ min_tornado_version }}
+    - name: 'tornado >= {{ min_tornado_version }}'
     {%- if salt['config.get']('virtualenv_name', None)  %}
     - bin_env: /srv/virtualenvs/{{ salt['config.get']('virtualenv_name') }}
     {%- endif %}
