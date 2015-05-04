@@ -2,8 +2,8 @@ include:
   - pkgs.system.python-pip
 
 
-{#- Ubuntu Lucid has way too old pip package, we'll need to upgrade "by hand", salt can't do it for us #}
-{% if grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.') %}
+{#- Ubuntu Lucid and CentOS 5 has way too old pip package, we'll need to upgrade "by hand", salt can't do it for us #}
+{% if (grains['os'] == 'Ubuntu' and grains['osrelease'].startswith('10.')) or (grains['os'] == 'CentOS' and grains['osrelease'].startswith('5.')) %}
 uninstall-python-pip:
   pkg.purged:
     - name: python
