@@ -3,6 +3,7 @@ include:
   {%- if salt['config.get']('virtualenv_name', None)  %}
   - projects.virtualenv
   {%- endif %}
+  - pkgs.python.saltpylint
   - pkgs.python.salttesting
 
 install_pylint:
@@ -16,6 +17,7 @@ install_pylint:
     - extra_index_url: https://pypi.python.org/simple
     - require:
       - pip: pip
+      - pip: saltpylint
       - pip: salttesting
       {%- if salt['config.get']('virtualenv_name', None)  %}
       - virtualenv: create-virtualenv
