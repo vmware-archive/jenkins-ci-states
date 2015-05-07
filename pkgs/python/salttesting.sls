@@ -1,5 +1,6 @@
 include:
   - pkgs.python.pip
+  - pkgs.python.six
   - pkgs.python.mock
   - pkgs.python.requests
   - pkgs.python.coverage
