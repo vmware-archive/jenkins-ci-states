@@ -1,5 +1,5 @@
 {%- set repo_clone_dir = pillar.get('shellcheck_clone_dir', '/tmp/shellcheck-checkout') %}
-{%- set shell_check_version = '0.3.5' %}
+{%- set shell_check_version = '0.4.3' %}
 
 include:
   - pkgs.system.cabal-install
